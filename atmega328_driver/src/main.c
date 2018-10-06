@@ -94,10 +94,15 @@ int main(void)
 
             PORTD = 0;
             shift_register_latch_output(&anode_register);
+
+            sei();
+            _delay_us(400);
+            cli();
+
             PORTD = (1 << k);
 
             sei();
-            _delay_ms(1);
+            _delay_us(50);
             cli();
         }
 
