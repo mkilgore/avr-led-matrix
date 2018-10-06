@@ -14,6 +14,7 @@ struct shift_register {
 
 void shift_register_write_bit(struct shift_register *reg, uint8_t bit);
 void shift_register_write_byte(struct shift_register *reg, uint8_t value);
+void shift_register_write_byte_reverse(struct shift_register *reg, uint8_t value);
 void shift_register_latch_output(struct shift_register *reg);
 
 #endif

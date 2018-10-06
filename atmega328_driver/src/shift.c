@@ -25,6 +25,15 @@ void shift_register_write_byte(struct shift_register *reg, uint8_t value)
     }
 }
 
+void shift_register_write_byte_reverse(struct shift_register *reg, uint8_t value)
+{
+    int i;
+    for (i = 0; i < 8; i++) {
+        shift_register_write_bit(reg, value & 0x01);
+        value >>= 1;
+    }
+}
+
 void shift_register_latch_output(struct shift_register *reg)
 {
     sbi(*reg->latch_port, reg->latch_pin);
