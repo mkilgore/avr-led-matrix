@@ -1,6 +1,8 @@
 #ifndef INCLUDE_COMMON_H
 #define INCLUDE_COMMON_H
 
+/* #define USE_PRINTF */
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -16,5 +18,11 @@
 #define PIN_USI     PINB
 #define PIN_USI_SDA PINB0
 #define PIN_USI_SCL PINB2
+
+#define SERIAL_DDR   DDRB
+#define SERIAL_PORT  PORTB
+#define SERIAL_PIN   PORTB3
+
+#define MATRIX_WIDTH 4
 
 #endif
